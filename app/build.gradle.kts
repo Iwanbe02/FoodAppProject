@@ -43,7 +43,7 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation("com.google.code.gson:gson:2.10.1")
-    implementation ("com.github.ismaeldivita:chip-navigation-bar:1.4.0")
+    implementation("com.github.ismaeldivita:chip-navigation-bar:1.4.0")
     implementation("com.google.firebase:firebase-database:20.3.1")
     implementation("com.github.bumptech.glide:glide:4.12.0")
 }
