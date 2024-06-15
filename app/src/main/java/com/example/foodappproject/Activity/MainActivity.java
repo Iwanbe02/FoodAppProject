@@ -46,7 +46,7 @@ public class MainActivity extends BaseActivity {
                     for (DataSnapshot issue : snapshot.getChildren()){
                         items.add(issue.getValue(SliderItems.class));
                     }
-                    banner(items);
+                    banners(items);
                     binding.progressBarBanner.setVisibility(View.GONE);
                 }
             }
@@ -58,7 +58,7 @@ public class MainActivity extends BaseActivity {
         });
     }
 
-    private void banner(ArrayList<SliderItems> items){
+    private void banners(ArrayList<SliderItems> items){
         binding.viewpager2.setAdapter(new SliderAdapter(items, binding.viewpager2));
         binding.viewpager2.setClipChildren(false);
         binding.viewpager2.setClipToPadding(false);

@@ -64,7 +64,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/imageView10"
+                    android:id="@+id/pic"
                     android:layout_width="0dp"
                     android:layout_height="312dp"
                     android:layout_marginTop="16dp"
@@ -198,7 +198,7 @@
                     app:layout_constraintTop_toTopOf="@+id/linearLayout">
 
                     <TextView
-                        android:id="@+id/textView10"
+                        android:id="@+id/minusBtn"
                         android:layout_width="28dp"
                         android:layout_height="28dp"
                         android:gravity="center"
@@ -209,7 +209,7 @@
                         android:textColor="@color/white" />
 
                     <TextView
-                        android:id="@+id/textView11"
+                        android:id="@+id/numTxt"
                         android:layout_width="20dp"
                         android:layout_height="wrap_content"
                         android:text="1"
@@ -222,7 +222,7 @@
                         android:textColor="@color/white" />
 
                     <TextView
-                        android:id="@+id/textView12"
+                        android:id="@+id/plusBtn"
                         android:layout_width="28dp"
                         android:layout_height="28dp"
                         android:gravity="center"
@@ -248,7 +248,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button"
+            android:id="@+id/addBtn"
             style="@android:style/Widget.Button"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
@@ -272,7 +272,7 @@
             android:textColor="@color/dark_blue"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/button" />
+            app:layout_constraintTop_toTopOf="@+id/addBtn" />
 
         <TextView
             android:id="@+id/totalTxt"
@@ -282,7 +282,7 @@
             android:textColor="@color/dark_blue"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/button"
+            app:layout_constraintBottom_toBottomOf="@+id/addBtn"
             app:layout_constraintStart_toStartOf="@+id/textView13"
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
     </androidx.constraintlayout.widget.ConstraintLayout>
