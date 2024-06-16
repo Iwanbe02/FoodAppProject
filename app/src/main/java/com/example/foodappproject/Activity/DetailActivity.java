@@ -25,10 +25,10 @@ public class DetailActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        binding = ActivityDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getIntentExtra();
-
+        setVariable();
 
     }
     private void setVariable(){

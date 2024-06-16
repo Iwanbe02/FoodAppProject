@@ -16,7 +16,7 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        database = FirebaseDatabase.getInstance("https://foodapp-73733-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().getDatabase();
+        database = FirebaseDatabase.getInstance("https://foodapp-73733-default-rtdb.asia-southeast1.firebasedatabase.app");
         //mAuth = FirebaseAuth.getInstance();
         //getWindow().setStatusBarColor(getResources().getColor(R.color.white));
         Window w=getWindow();

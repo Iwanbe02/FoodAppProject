@@ -3,37 +3,37 @@ package com.example.foodappproject.Domain;
 import java.io.Serializable;
 
 public class Foods implements Serializable {
-    private int categoryId;
-    private String description;
+    private int CategoryId;
+    private String Description;
     private boolean BestFood;
-    private int id;
-    private int locationId;
-    private double price;
-    private String imagePath;
-    private int priceId;
-    private double star;
-    private int timeId;
-    private int timeValue;
-    private String title;
-    private int numberInCart;
+    private int Id;
+    private int LocationId;
+    private double Price;
+    private String ImagePath;
+    private int PriceId;
+    private double Star;
+    private int TimeId;
+    private int TimeValue;
+    private String Title;
+    private int NumberInCart;
 
     public Foods() {
     }
 
     public int getCategoryId() {
-        return categoryId;
+        return CategoryId;
     }
 
     public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+        CategoryId = categoryId;
     }
 
     public String getDescription() {
-        return description;
+        return Description;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        Description = description;
     }
 
     public boolean isBestFood() {
@@ -45,82 +45,82 @@ public class Foods implements Serializable {
     }
 
     public int getId() {
-        return id;
+        return Id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        Id = id;
     }
 
     public int getLocationId() {
-        return locationId;
+        return LocationId;
     }
 
     public void setLocationId(int locationId) {
-        this.locationId = locationId;
+        LocationId = locationId;
     }
 
     public double getPrice() {
-        return price;
+        return Price;
     }
 
     public void setPrice(double price) {
-        this.price = price;
+        Price = price;
     }
 
     public String getImagePath() {
-        return imagePath;
+        return ImagePath;
     }
 
     public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
+        ImagePath = imagePath;
     }
 
     public int getPriceId() {
-        return priceId;
+        return PriceId;
     }
 
     public void setPriceId(int priceId) {
-        this.priceId = priceId;
+        PriceId = priceId;
     }
 
     public double getStar() {
-        return star;
+        return Star;
     }
 
     public void setStar(double star) {
-        this.star = star;
+        Star = star;
     }
 
     public int getTimeId() {
-        return timeId;
+        return TimeId;
     }
 
     public void setTimeId(int timeId) {
-        this.timeId = timeId;
+        TimeId = timeId;
     }
 
     public int getTimeValue() {
-        return timeValue;
+        return TimeValue;
     }
 
     public void setTimeValue(int timeValue) {
-        this.timeValue = timeValue;
+        TimeValue = timeValue;
     }
 
     public String getTitle() {
-        return title;
+        return Title;
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        Title = title;
     }
 
     public int getNumberInCart() {
-        return numberInCart;
+        return NumberInCart;
     }
 
     public void setNumberInCart(int numberInCart) {
-        this.numberInCart = numberInCart;
+        NumberInCart = numberInCart;
     }
 }
