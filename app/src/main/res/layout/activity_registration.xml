@@ -119,29 +119,20 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="158dp"
-        android:layout_height="190dp"
-        android:src="@drawable/logo"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="246dp"
-        tools:layout_editor_absoluteY="-15dp" />
-
-    <ImageView
         android:id="@+id/imageView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/red_arc"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView15"
         android:layout_width="216dp"
         android:layout_height="225dp"
         android:src="@drawable/bicycle"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="620dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

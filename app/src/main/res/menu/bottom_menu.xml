@@ -6,9 +6,9 @@
         android:title="Home"
         app:cnb_backgroundColor="@color/red"
         app:cnb_iconColor="@color/white"/>
-    <item android:id="@+id/favorites"
-        android:icon="@drawable/btn_2"
-        android:title="Favorites"
+    <item android:id="@+id/maps"
+        android:icon="@drawable/location"
+        android:title="Map"
         app:cnb_backgroundColor="@color/red"
         app:cnb_iconColor="@color/white"/>
     <item android:id="@+id/cart"

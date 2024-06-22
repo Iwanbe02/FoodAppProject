@@ -21,7 +21,19 @@ public class IntroActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         binding=ActivityIntroBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        binding.goBtn.setOnClickListener(v -> startActivity(new Intent(IntroActivity.this, MainActivity.class)));
+        setVariable();
 
+    }
+
+    private void setVariable() {
+        binding.loginBtn.setOnClickListener(v -> {
+//            if (mAuth.getCurrentUser() != null){
+//                startActivity(new Intent(IntroActivity.this, MainActivity.class));
+//            }else{
+//                startActivity(new Intent(IntroActivity.this, LoginActivity.class));
+//            }
+            startActivity(new Intent(IntroActivity.this, LoginActivity.class));
+        });
+        binding.signupBtn.setOnClickListener(v -> startActivity(new Intent(IntroActivity.this, RegistrationActivity.class)));
     }
 }
