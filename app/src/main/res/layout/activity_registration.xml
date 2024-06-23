@@ -32,7 +32,7 @@
         android:drawableLeft="@drawable/baseline_account_circle_24"
         android:drawablePadding="10dp"
         android:elevation="3dp"
-        android:hint="Name"
+        android:hint="Email"
         android:inputType="text"
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
