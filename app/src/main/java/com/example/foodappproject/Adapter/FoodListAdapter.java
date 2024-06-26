@@ -17,6 +17,8 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.foodappproject.Activity.DetailActivity;
 import com.example.foodappproject.Domain.Foods;
 import com.example.foodappproject.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 
@@ -46,7 +48,10 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.viewho
                 .transform(new CenterCrop(), new RoundedCorners(50))
                 .into(holder.pic);
         holder.itemView.setOnClickListener(v -> {
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String userId = user.getUid();
             Intent intent = new Intent(context, DetailActivity.class);
+            intent.putExtra("uid", userId);
             intent.putExtra("object", items.get(position));
             context.startActivity(intent);
         });

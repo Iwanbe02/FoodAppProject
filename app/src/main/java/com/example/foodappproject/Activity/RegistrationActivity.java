@@ -28,7 +28,7 @@ public class RegistrationActivity extends BaseActivity {
 
     private void setVariable() {
         binding.signupBtn.setOnClickListener(v -> {
-            String email = binding.name.getText().toString();
+            String email = binding.email.getText().toString();
             String password = binding.password.getText().toString();
             String retypePassword = binding.repassword.getText().toString();
             if (password.length() < 6){

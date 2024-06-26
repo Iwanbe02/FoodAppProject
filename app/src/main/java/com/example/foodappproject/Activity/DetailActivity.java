@@ -22,11 +22,13 @@ public class DetailActivity extends BaseActivity {
     private Foods object;
     private int num = 1;
     private ManagementCart managementCart;
+    private String uid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        uid = getIntent().getStringExtra("uid");
         getIntentExtra();
         setVariable();
 
@@ -59,7 +61,7 @@ public class DetailActivity extends BaseActivity {
         });
         binding.addBtn.setOnClickListener(v -> {
             object.setNumberInCart(num);
-            managementCart.insertFood(object);
+            managementCart.insertFood(object, uid);
         });
     }
     private void getIntentExtra() {

@@ -16,8 +16,8 @@ public class ManagementCart {
         this.tinyDB=new TinyDB(context);
     }
 
-    public void insertFood(Foods item) {
-        ArrayList<Foods> listpop = getListCart();
+    public void insertFood(Foods item, String uid) {
+        ArrayList<Foods> listpop = getListCart(uid);
         boolean existAlready = false;
         int n = 0;
         for (int i = 0; i < listpop.size(); i++) {
@@ -32,16 +32,16 @@ public class ManagementCart {
         }else{
             listpop.add(item);
         }
-        tinyDB.putListObject("CartList",listpop);
+        tinyDB.putListObject("CartList" + uid,listpop);
         Toast.makeText(context, "Added to your Cart", Toast.LENGTH_SHORT).show();
     }
 
-    public ArrayList<Foods> getListCart() {
-        return tinyDB.getListObject("CartList");
+    public ArrayList<Foods> getListCart(String uid) {
+        return tinyDB.getListObject("CartList" + uid);
     }
 
-    public Double getTotalFee(){
-        ArrayList<Foods> listItem=getListCart();
+    public Double getTotalFee(String uid){
+        ArrayList<Foods> listItem=getListCart(uid);
         double fee=0;
         for (int i = 0; i < listItem.size(); i++) {
             fee=fee+(listItem.get(i).getPrice()*listItem.get(i).getNumberInCart());

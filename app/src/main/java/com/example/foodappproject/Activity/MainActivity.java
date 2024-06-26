@@ -26,12 +26,15 @@ import java.util.ArrayList;
 
 public class MainActivity extends BaseActivity {
     ActivityMainBinding binding;
+    private String email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding=ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        Intent intent = getIntent();
+        email = intent.getStringExtra("email");
+        binding.name.setText(email);
         initCategory();
         initBanner();
         setVariable();
@@ -73,11 +76,27 @@ public class MainActivity extends BaseActivity {
         binding.viewpager2.setPageTransformer(compositePageTransformer);
     }
     private void setVariable(){
+
         binding.bottomMenu.setItemSelected(R.id.home, true);
         binding.bottomMenu.setOnItemSelectedListener(i -> {
             if (i == R.id.cart){
-                startActivity(new Intent(MainActivity.this, CartActivity.class));
+                Intent intent = new Intent(new Intent(MainActivity.this, CartActivity.class));
+                intent.putExtra("uid", getIntent().getStringExtra("uid"));
+                startActivity(intent);
             }
+            if(i == R.id.maps){
+                startActivity(new Intent(MainActivity.this, MapActivity.class));
+            }
+            if(i == R.id.profile){
+                Intent intent = new Intent(MainActivity.this, UserInfoActivity.class);
+                intent.putExtra("email", email);
+                startActivity(intent);
+            }
+        });
+        binding.checkOrderBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, OrderActivity.class);
+            intent.putExtra("uid", getIntent().getStringExtra("uid"));
+            startActivity(intent);
         });
     }
     private void initCategory() {
