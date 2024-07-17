@@ -48,24 +48,31 @@ public class ManagementCart {
         }
         return fee;
     }
-    public void minusNumberItem(ArrayList<Foods> listItem,int position, ChangeNumberItemsListener changeNumberItemsListener){
-        if(listItem.get(position).getNumberInCart()==1){
+    public void minusNumberItem(String uid, ArrayList<Foods> listItem, int position, ChangeNumberItemsListener changeNumberItemsListener) {
+        if (listItem.get(position).getNumberInCart() == 1) {
             listItem.remove(position);
-        }else{
-            listItem.get(position).setNumberInCart(listItem.get(position).getNumberInCart()-1);
+        } else {
+            listItem.get(position).setNumberInCart(listItem.get(position).getNumberInCart() - 1);
         }
-        tinyDB.putListObject("CartList",listItem);
+        updateCart(uid, listItem);
         changeNumberItemsListener.change();
     }
-    public  void plusNumberItem(ArrayList<Foods> listItem,int position,ChangeNumberItemsListener changeNumberItemsListener){
-        listItem.get(position).setNumberInCart(listItem.get(position).getNumberInCart()+1);
-        tinyDB.putListObject("CartList",listItem);
+
+    public void plusNumberItem(String uid, ArrayList<Foods> listItem, int position, ChangeNumberItemsListener changeNumberItemsListener) {
+        listItem.get(position).setNumberInCart(listItem.get(position).getNumberInCart() + 1);
+        updateCart(uid, listItem);
         changeNumberItemsListener.change();
     }
-    public  void removeItem(ArrayList<Foods> listItem,int position,ChangeNumberItemsListener changeNumberItemsListener){
+
+    public void removeItem(String uid, ArrayList<Foods> listItem, int position, ChangeNumberItemsListener changeNumberItemsListener) {
         listItem.remove(position);
-        tinyDB.putListObject("CartList",listItem);
+        updateCart(uid, listItem);
         changeNumberItemsListener.change();
+    }
+
+    private void updateCart(String uid, ArrayList<Foods> listItem) {
+        // Save cart data using a key based on uid
+        tinyDB.putListObject("CartList" + uid, listItem);
     }
 
 }

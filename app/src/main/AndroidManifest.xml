@@ -52,6 +52,10 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/my_map_api_key" />
+
+        <service android:name="com.paypal.android.sdk.payments.PayPalService" android:exported="false" />
+        <activity android:name="com.paypal.android.sdk.payments.PaymentActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
     </application>
 
 </manifest>

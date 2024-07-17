@@ -17,6 +17,8 @@ import com.example.foodappproject.Domain.Foods;
 import com.example.foodappproject.Helper.ChangeNumberItemsListener;
 import com.example.foodappproject.Helper.ManagementCart;
 import com.example.foodappproject.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 
@@ -47,15 +49,17 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.viewholder> {
                 .load(list.get(position).getImagePath())
                 .transform(new CenterCrop(), new RoundedCorners(30))
                 .into(holder.pic);
-        holder.plusItem.setOnClickListener(v -> managementCart.plusNumberItem(list, position, () -> {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String userId = user.getUid();
+        holder.plusItem.setOnClickListener(v -> managementCart.plusNumberItem(userId, list, position, () -> {
             notifyDataSetChanged();
             changeNumberItemsListener.change();
         }));
-        holder.minusItem.setOnClickListener(v -> managementCart.minusNumberItem(list, position, () -> {
+        holder.minusItem.setOnClickListener(v -> managementCart.minusNumberItem(userId, list, position, () -> {
             notifyDataSetChanged();
             changeNumberItemsListener.change();
         }));
-        holder.trashBtn.setOnClickListener(v -> managementCart.removeItem(list, position, () -> {
+        holder.trashBtn.setOnClickListener(v -> managementCart.removeItem(userId, list, position, () -> {
             notifyDataSetChanged();
             changeNumberItemsListener.change();
         }));
